@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/yves-dao/yves-dao.iml" filepath="$PROJECT_DIR$/yves-dao/yves-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/yves-parent.iml" filepath="$PROJECT_DIR$/yves-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/yves-web/yves-web.iml" filepath="$PROJECT_DIR$/yves-web/yves-web.iml" />
+    </modules>
+  </component>
+</project>
