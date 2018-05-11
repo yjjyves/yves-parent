@@ -7,12 +7,14 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="yves-dao" />
+        <module name="yves-service" />
         <module name="yves-web" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
       <module name="yves-dao" target="1.8" />
       <module name="yves-parent" target="1.8" />
+      <module name="yves-service" target="1.8" />
       <module name="yves-web" target="1.8" />
     </bytecodeTargetLevel>
   </component>
