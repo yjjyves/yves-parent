@@ -6,6 +6,31 @@
         <element id="directory" name="classes">
           <element id="module-output" name="yves-web" />
         </element>
+        <element id="directory" name="lib">
+          <element id="archive" name="yves-service-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="yves-service" />
+          </element>
+          <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:4.3.9.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-aop:4.3.9.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-beans:4.3.9.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-context:4.3.9.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-core:4.3.9.RELEASE" />
+          <element id="library" level="project" name="Maven: commons-logging:commons-logging:1.2" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-expression:4.3.9.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-web:4.3.9.RELEASE" />
+          <element id="archive" name="yves-dao-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="yves-dao" />
+          </element>
+          <element id="library" level="project" name="Maven: org.springframework:spring-jdbc:4.3.9.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-tx:4.3.9.RELEASE" />
+          <element id="archive" name="yves-model-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="yves-model" />
+          </element>
+          <element id="archive" name="yves-common-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="yves-common" />
+          </element>
+          <element id="library" level="project" name="Maven: commons-fileupload:commons-fileupload:1.2.2" />
+        </element>
       </element>
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/yves-web/target/yves-web/META-INF/MANIFEST.MF" />

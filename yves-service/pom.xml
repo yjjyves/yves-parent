@@ -11,5 +11,29 @@
 
     <artifactId>yves-service</artifactId>
 
+    <dependencies>
+
+        <!--它提供了对junit测试框架的简单封装，它使用我们在使用spring框架测试可以更方便和快捷-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>${spring.framework.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!--这个jar 文件包含Spring MVC 框架相关的所有类。包括框架的Servlets，Web MVC框架，控制器和视图支持-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${spring.framework.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.yves</groupId>
+            <artifactId>yves-dao</artifactId>
+            <version>${yves.version}</version>
+        </dependency>
+
+    </dependencies>
 
 </project>

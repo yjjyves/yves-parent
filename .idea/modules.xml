@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/yves-common/yves-common.iml" filepath="$PROJECT_DIR$/yves-common/yves-common.iml" />
       <module fileurl="file://$PROJECT_DIR$/yves-dao/yves-dao.iml" filepath="$PROJECT_DIR$/yves-dao/yves-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/yves-manager/yves-manager.iml" filepath="$PROJECT_DIR$/yves-manager/yves-manager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/yves-model/yves-model.iml" filepath="$PROJECT_DIR$/yves-model/yves-model.iml" />
       <module fileurl="file://$PROJECT_DIR$/yves-parent.iml" filepath="$PROJECT_DIR$/yves-parent.iml" />
       <module fileurl="file://$PROJECT_DIR$/yves-service/yves-service.iml" filepath="$PROJECT_DIR$/yves-service/yves-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/yves-web/yves-web.iml" filepath="$PROJECT_DIR$/yves-web/yves-web.iml" />

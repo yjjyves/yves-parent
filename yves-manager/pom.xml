@@ -9,18 +9,17 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>yves-web</artifactId>
+    <artifactId>yves-manager</artifactId>
     <packaging>war</packaging>
 
-    <name>yves-web Maven Webapp</name>
+    <name>yves-manager Maven Webapp</name>
     <!-- FIXME change it to the project's website -->
     <url>http://www.example.com</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
-        <java.version>1.8</java.version>
+        <maven.compiler.source>1.7</maven.compiler.source>
+        <maven.compiler.target>1.7</maven.compiler.target>
     </properties>
 
     <dependencies>
@@ -30,25 +29,10 @@
             <version>4.11</version>
             <scope>test</scope>
         </dependency>
-
-        <dependency>
-            <groupId>com.yves</groupId>
-            <artifactId>yves-service</artifactId>
-            <version>${yves.version}</version>
-        </dependency>
-
-        <!--文件上传-->
-        <dependency>
-            <groupId>commons-fileupload</groupId>
-            <artifactId>commons-fileupload</artifactId>
-            <version>1.2.2</version>
-        </dependency>
-
     </dependencies>
 
-
     <build>
-        <finalName>yves-web</finalName>
+        <finalName>yves-manager</finalName>
         <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
             <plugins>
                 <plugin>
@@ -92,8 +76,5 @@
                 </plugin>
             </plugins>
         </pluginManagement>
-
     </build>
-
-
 </project>
