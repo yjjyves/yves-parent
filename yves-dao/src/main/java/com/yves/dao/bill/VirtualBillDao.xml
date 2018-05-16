@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yves.dao.bill.VirtualBillDao">
+    <resultMap id="BaseResultMap" type="com.yves.model.bill.VirtualBillDO">
+        <result column="FID" property="id" jdbcType="VARCHAR"/>
+        <result column="FRECORDERID" property="recorderId" jdbcType="VARCHAR"/>
+        <result column="FKAGENTNUMBERID" property="agentNumberId" jdbcType="VARCHAR"/>
+        <result column="FAGENTNUMBER" property="agentNumber" jdbcType="VARCHAR"/>
+        <result column="FKCHANNELPERSONID" property="channelPersonId" jdbcType="VARCHAR"/>
+        <result column="FKMATCHRECORDID" property="matchRecordId" jdbcType="VARCHAR"/>
+        <result column="FKPERSONID" property="personId" jdbcType="VARCHAR"/>
+        <result column="FKACCOUNTID" property="accountId" jdbcType="VARCHAR"/>
+        <result column="FPERSONPHONE" property="personPhone" jdbcType="VARCHAR"/>
+        <result column="FCALLER" property="caller" jdbcType="VARCHAR"/>
+        <result column="FCALLERSHOW" property="callerShow" jdbcType="VARCHAR"/>
+        <result column="FCALLED" property="called" jdbcType="VARCHAR"/>
+        <result column="FCALLEDSHOW" property="calledShow" jdbcType="VARCHAR"/>
+        <result column="FBEGINTIME" property="beginTime" jdbcType="TIMESTAMP"/>
+        <result column="FRELEASETIME" property="releaseTime" jdbcType="TIMESTAMP"/>
+        <result column="FCALLDURATION" property="callDuration" jdbcType="INTEGER"/>
+        <result column="FBILLDURATION" property="billDuration" jdbcType="INTEGER"/>
+        <result column="FSOUNDURL" property="soundUrl" jdbcType="VARCHAR"/>
+        <result column="FCALLCOST" property="callCost" jdbcType="DOUBLE"/>
+        <result column="FCALLERAREA" property="callerArea" jdbcType="VARCHAR"/>
+        <result column="FCALLEDAREA" property="calledArea" jdbcType="VARCHAR"/>
+        <result column="FCREATETIME" property="createTime" jdbcType="TIMESTAMP"/>
+        <result column="FKCUID" property="cuId" jdbcType="VARCHAR"/>
+        <result column="FCONNECTTIME" property="connectTime" jdbcType="TIMESTAMP"/>
+        <result column="FALERTINGTIME" property="alertingTime" jdbcType="TIMESTAMP"/>
+        <result column="FSOUNDPERSISTENTURL" property="soundPersistentUrl" jdbcType="VARCHAR"/>
+        <result column="FLASTUPDATETIME" property="updateTime" jdbcType="TIMESTAMP"/>
+        <result column="FSHIELDPID" property="shieldPid" jdbcType="VARCHAR"/>
+        <result column="FISSHIELD" property="isShield" jdbcType="VARCHAR"/>
+        <result column="FSHIELDTIME" property="shieldTime" jdbcType="TIMESTAMP"/>
+        <result column="FKPRIVATEID" property="privateId" jdbcType="VARCHAR"/>
+        <result column="FPRIVATEPERSONID" property="privatePersonId" jdbcType="VARCHAR"/>
+        <result column="FKAREAORGID" property="areaId" jdbcType="VARCHAR"/>
+        <result column="FKREGIONORGID" property="regionId" jdbcType="VARCHAR"/>
+        <result column="FKORGID" property="storeId" jdbcType="VARCHAR"/>
+        <result column="FKOWNERID" property="ownerId" jdbcType="VARCHAR"/>
+        <result column="FKROOMID" property="roomId" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        VB.FID,
+        VB.FRECORDERID,
+        VB.FKAGENTNUMBERID,
+        VB.FAGENTNUMBER,
+        VB.FKCHANNELPERSONID,
+        VB.FKMATCHRECORDID,
+        VB.FKPERSONID,
+        VB.FKACCOUNTID,
+        VB.FPERSONPHONE,
+        VB.FCALLER,
+        VB.FCALLERSHOW,
+        VB.FCALLED,
+        VB.FCALLEDSHOW,
+        VB.FBEGINTIME,
+        VB.FRELEASETIME,
+        VB.FCALLDURATION,
+        VB.FBILLDURATION,
+        VB.FCALLRESULT,
+        VB.FSOUNDURL,
+        VB.FCALLCOST,
+        VB.FCALLERAREA,
+        VB.FCALLEDAREA,
+        VB.FCREATETIME,
+        VB.FKCUID,
+        VB.FCONNECTTIME,
+        VB.FALERTINGTIME,
+        VB.FSOUNDPERSISTENTURL,
+        VB.FCITY,
+        VB.FOPERATORS,
+        VB.FLASTUPDATETIME,
+        VB.FSHIELDPID,
+        VB.FISSHIELD,
+        VB.FSHIELDTIME,
+        VB.FAUDIODOWNLOADSTATUS,
+        VB.FISPRIVATE,
+        VB.FKPRIVATEID,
+        VB.FPRIVATEPERSONID,
+        VB.FKAREAORGID,
+        VB.FKREGIONORGID,
+        VB.FKORGID,
+        VB.FCHANNELTYPE,
+        VB.FKOWNERID,
+        VB.FKROOMID,
+        VB.FISQFANGPUBLIC
+    </sql>
+
+    <select id="getVirtualBillById" parameterType="string" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List" /> from T_DIAL_VIRTUAL_BILL vb
+
+        <where>
+            <if test="id != null and id != ''">
+                AND vb.fid = #{id}
+            </if>
+        </where>
+
+    </select>
+
+</mapper>
+
