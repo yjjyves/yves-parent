@@ -1,3 +1,4 @@
+/*
 package com.yves.dao.plugin;
 
 import com.dongnaoedu.mybatis.utils.PageInfo;
@@ -17,12 +18,14 @@ import java.sql.ResultSet;
 import java.util.Map;
 import java.util.Properties;
 
+*/
 /**
  * 自定义分页插件
  * 
  * @author allen
  *
- */
+ *//*
+
 @Intercepts({
 		@Signature(type = StatementHandler.class, method = "prepare", args = { Connection.class, Integer.class }) })
 public class PagePlugin implements Interceptor {
@@ -32,9 +35,11 @@ public class PagePlugin implements Interceptor {
 	// 分页关键字
 	private static String pageSqlId = "";
 
-	/**
+	*/
+/**
 	 * 拦截器要执行的方法
-	 */
+	 *//*
+
 	@Override
 	public Object intercept(Invocation invocation) throws Throwable {
 		// 从invocation中提取StatementHandler
@@ -92,17 +97,21 @@ public class PagePlugin implements Interceptor {
 		return invocation.proceed();
 	}
 
-	/**
+	*/
+/**
 	 * 拦截器需要拦截的对象
-	 */
+	 *//*
+
 	public Object plugin(Object target) {
 		// 拦截器需要拦截的对象:target, this:当前类的实例
 		return Plugin.wrap(target, this);
 	}
 
-	/**
+	*/
+/**
 	 * 设置初始化的属性值
-	 */
+	 *//*
+
 	@Override
 	public void setProperties(Properties properties) {
 		dialect = properties.getProperty("dialect");
@@ -123,13 +132,15 @@ public class PagePlugin implements Interceptor {
 		}
 	}
 
-	/**
+	*/
+/**
 	 * 生成分页sql
 	 * 
 	 * @param sql
 	 * @param page
 	 * @return
-	 */
+	 *//*
+
 	private String generatePageSql(String sql, PageInfo page) {
 		if (page != null && (dialect != null || !dialect.equals(""))) {
 			StringBuffer pageSql = new StringBuffer();
@@ -137,7 +148,8 @@ public class PagePlugin implements Interceptor {
 				pageSql.append(sql);
 				pageSql.append(" limit " + page.getStartIndex() + "," + page.getTotalSelect());
 			}
-			/**
+			*/
+/**
 			 * 适配多种数据库 else if ("oracle".equals(dialect)) { pageSql.append("select * from
 			 * (select tmp_tb.*,ROWNUM row_id from ("); pageSql.append(sql);
 			 * pageSql.append(") tmp_tb where ROWNUM<=");
@@ -146,7 +158,8 @@ public class PagePlugin implements Interceptor {
 			 * else if ("其他db".equals(sialect)){
 			 * 
 			 * }
-			 */
+			 *//*
+
 			return pageSql.toString();
 		} else {
 			return sql;
@@ -154,3 +167,4 @@ public class PagePlugin implements Interceptor {
 	}
 
 }
+*/

@@ -1,3 +1,4 @@
+/*
 package com.yves.dao.plugin;
 
 import org.apache.ibatis.executor.Executor;
@@ -113,7 +114,9 @@ public class PageInterceptor implements Interceptor {
             try {
                 Object resultObj = invocation.proceed(); // Executor.query(..)
                 if (resultObj instanceof List) {
-                    /* @SuppressWarnings({ "unchecked", "rawtypes" }) */
+                    */
+/* @SuppressWarnings({ "unchecked", "rawtypes" }) *//*
+
                     page.setResults((List) resultObj);
                 }
                 return resultObj;
@@ -136,7 +139,8 @@ public class PageInterceptor implements Interceptor {
         return null;
     }
 
-    /**
+    */
+/**
      * <pre>
      * 把真正的参数对象解析出来
      * Spring会自动封装对个参数对象为Map<String, Object>对象
@@ -148,7 +152,8 @@ public class PageInterceptor implements Interceptor {
      * @author jundong.xu_C
      * @param parameterObj
      * @return
-     */
+     *//*
+
     protected Object extractRealParameterObject(Object parameterObj) {
         if (parameterObj instanceof Map<?, ?>) {
             Map<?, ?> parameterMap = (Map<?, ?>) parameterObj;
@@ -197,7 +202,8 @@ public class PageInterceptor implements Interceptor {
         }
     }
 
-    /**
+    */
+/**
      * <pre>
      * 生成分页SQL
      * </pre>
@@ -206,7 +212,8 @@ public class PageInterceptor implements Interceptor {
      * @param page
      * @param sql
      * @return
-     */
+     *//*
+
     protected String buildPageSql(Page<?> page, String sql) {
         if (MYSQL.equalsIgnoreCase(databaseType)) {
             return buildMysqlPageSql(page, sql);
@@ -216,7 +223,8 @@ public class PageInterceptor implements Interceptor {
         return sql;
     }
 
-    /**
+    */
+/**
      * <pre>
      * 生成Mysql分页查询SQL
      * </pre>
@@ -225,14 +233,16 @@ public class PageInterceptor implements Interceptor {
      * @param page
      * @param sql
      * @return
-     */
+     *//*
+
     protected String buildMysqlPageSql(Page<?> page, String sql) {
         // 计算第一条记录的位置，Mysql中记录的位置是从0开始的。
         int offset = (page.getPageNo() - 1) * page.getPageSize();
         return new StringBuilder(sql).append(" limit ").append(offset).append(",").append(page.getPageSize()).toString();
     }
 
-    /**
+    */
+/**
      * <pre>
      * 生成Oracle分页查询SQL
      * </pre>
@@ -241,7 +251,8 @@ public class PageInterceptor implements Interceptor {
      * @param page
      * @param sql
      * @return
-     */
+     *//*
+
     protected String buildOraclePageSql(Page<?> page, String sql) {
         // 计算第一条记录的位置，Oracle分页是通过rownum进行的，而rownum是从1开始的
         int offset = (page.getPageNo() - 1) * page.getPageSize() + 1;
@@ -251,7 +262,8 @@ public class PageInterceptor implements Interceptor {
         return sb.toString();
     }
 
-    /**
+    */
+/**
      * <pre>
      * 查询总数
      * </pre>
@@ -262,7 +274,8 @@ public class PageInterceptor implements Interceptor {
      * @param mappedStatement
      * @param connection
      * @throws SQLException
-     */
+     *//*
+
     protected void queryTotalRecord(Page<?> page, Object parameterObject, MappedStatement mappedStatement, Connection connection) throws SQLException {
         BoundSql boundSql = mappedStatement.getBoundSql(page);
         String sql = boundSql.getSql();
@@ -304,29 +317,35 @@ public class PageInterceptor implements Interceptor {
         }
     }
 
-    /**
+    */
+/**
      * 根据原Sql语句获取对应的查询总记录数的Sql语句
      * 
      * @param sql
      * @return
-     */
+     *//*
+
     protected String buildCountSql(String sql) {
         int index = sql.indexOf("from");
         return "select count(*) " + sql.substring(index);
     }
 
-    /**
+    */
+/**
      * 利用反射进行操作的一个工具类
      * 
-     */
+     *//*
+
     private static class ReflectUtil {
-        /**
+        */
+/**
          * 利用反射获取指定对象的指定属性
          * 
          * @param obj 目标对象
          * @param fieldName 目标属性
          * @return 目标属性的值
-         */
+         *//*
+
         public static Object getFieldValue(Object obj, String fieldName) {
             Object result = null;
             Field field = ReflectUtil.getField(obj, fieldName);
@@ -345,13 +364,15 @@ public class PageInterceptor implements Interceptor {
             return result;
         }
 
-        /**
+        */
+/**
          * 利用反射获取指定对象里面的指定属性
          * 
          * @param obj 目标对象
          * @param fieldName 目标属性
          * @return 目标字段
-         */
+         *//*
+
         private static Field getField(Object obj, String fieldName) {
             Field field = null;
             for (Class<?> clazz = obj.getClass(); clazz != Object.class; clazz = clazz.getSuperclass()) {
@@ -365,13 +386,15 @@ public class PageInterceptor implements Interceptor {
             return field;
         }
 
-        /**
+        */
+/**
          * 利用反射设置指定对象的指定属性为指定的值
          * 
          * @param obj 目标对象
          * @param fieldName 目标属性
          * @param fieldValue 目标值
-         */
+         *//*
+
         public static void setFieldValue(Object obj, String fieldName, String fieldValue) {
             Field field = ReflectUtil.getField(obj, fieldName);
             if (field != null) {
@@ -408,4 +431,4 @@ public class PageInterceptor implements Interceptor {
         }
     }
 
-}
+}*/

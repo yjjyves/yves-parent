@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+
+<generatorConfiguration>
+    <!--数据库驱动jar -->
+    <classPathEntry location="C:\Yves_data\ojdbc14-10.2.0.3.0.jar" />
+
+    <context id="DB2Tables" targetRuntime="MyBatis3">
+        <!--去除注释  -->
+        <commentGenerator>
+            <property name="suppressAllComments" value="true" />
+            <property name="suppressDate" value="true" />
+        </commentGenerator>
+
+        <!--数据库连接 -->
+        <jdbcConnection driverClass="oracle.jdbc.OracleDriver"
+                        connectionURL="jdbc:oracle:thin:@(DESCRIPTION =
+                            (ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.0.44)(PORT = 1521))
+                            (CONNECT_DATA =
+                              (SERVER = DEDICATED)
+                              (SERVICE_NAME = qftest44)
+                            )
+                          )"
+                        userId="COMMON"
+                        password="COMMON">
+        </jdbcConnection>
+        <!--默认false
+           Java type resolver will always use java.math.BigDecimal if the database column is of type DECIMAL or NUMERIC.
+         -->
+        <javaTypeResolver >
+            <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver>
+
+        <!--生成实体类 指定包名 以及生成的地址 （可以自定义地址，但是路径不存在不会自动创建  使用Maven生成在target目录下，会自动创建） -->
+        <javaModelGenerator targetPackage="com.qfang.model.dial" targetProject="MAVEN">
+            <property name="enableSubPackages" value="false" />
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+        <!--生成SQLMAP文件 -->
+        <sqlMapGenerator targetPackage="com.qfang.dao.dial"  targetProject="MAVEN">
+            <property name="enableSubPackages" value="false" />
+        </sqlMapGenerator>
+        <!--生成Dao文件 可以配置 type="XMLMAPPER"生成xml的dao实现  context id="DB2Tables" 修改targetRuntime="MyBatis3"  -->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.qfang.dao.dial"  targetProject="MAVEN">
+            <property name="enableSubPackages" value="false" />
+        </javaClientGenerator>
+
+
+       <!-- <table tableName="T_DIAL_VIRTUAL_BILL" domainObjectName="VirtualBill"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               selectByExampleQueryId="false">
+            <columnOverride column="FID" property="id" />
+            <columnOverride column="FRECORDERID" property="recorderId" />
+            <columnOverride column="FKAGENTNUMBERID" property="agentNumberId" />
+            <columnOverride column="FAGENTNUMBER" property="agentNumber" />
+            <columnOverride column="FKCHANNELPERSONID" property="channelPersonId" />
+            <columnOverride column="FKMATCHRECORDID" property="matchRecordId" />
+            <columnOverride column="FKPERSONID" property="personId" />
+            <columnOverride column="FKACCOUNTID" property="accountId" />
+            <columnOverride column="FPERSONPHONE" property="personPhone" />
+            <columnOverride column="FCALLER" property="caller" />
+            <columnOverride column="FCALLERSHOW" property="callerShow" />
+            <columnOverride column="FCALLED" property="called" />
+            <columnOverride column="FCALLEDSHOW" property="calledShow" />
+            <columnOverride column="FSHIELDPID" property="shieldPid" />
+            <columnOverride column="FISSHIELD" property="isShield" jdbcType="INTEGER" javaType="java.lang.Integer"/>
+            <columnOverride column="FSHIELDTIME" property="shieldTime" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+
+            <columnOverride column="FSTARTTIME" property="startTime" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+            <columnOverride column="FANSWERTIME" property="answerTime" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+            <columnOverride column="FBEGINTIME" property="beginTime" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+            <columnOverride column="FRELEASETIME" property="releaseTime" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+            <columnOverride column="FCONNECTTIME" property="connectTime" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+            <columnOverride column="FALERTINGTIME" property="alertingTime" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+
+            <columnOverride column="FCALLDURATION" property="callDuration" jdbcType="INTEGER" javaType="java.lang.Integer" />
+            <columnOverride column="FBILLDURATION" property="billDuration" jdbcType="INTEGER" javaType="java.lang.Integer" />
+
+            <columnOverride column="FCALLRESULT" property="callResult" />
+            <columnOverride column="FSOUNDURL" property="soundUrl" />
+            <columnOverride column="FSOUNDPERSISTENTURL" property="soundPersistentUrl" />
+            <columnOverride column="FCALLCOST" property="callCost" jdbcType="FLOAT" javaType="java.lang.Float" />
+
+            <columnOverride column="FCITY" property="city" />
+            <columnOverride column="FOPERATORS" property="operators" />
+            <columnOverride column="FISPRIVATE" property="isPrivate" />
+            <columnOverride column="FKPRIVATEID" property="privateId" />
+            <columnOverride column="FPRIVATEPERSONID" property="privatePersonId" />
+
+            <columnOverride column="FKORGID" property="storeId" />
+            <columnOverride column="FKAREAORGID" property="areaId" />
+            <columnOverride column="FKREGIONORGID" property="regionId" />
+            <columnOverride column="FKOWNERID" property="ownerId" />
+            <columnOverride column="FKROOMID" property="roomId" />
+            <columnOverride column="FCHANNELTYPE" property="channelType" />
+            <columnOverride column="FISQFANGPUBLIC" property="isQPublic" />
+            <columnOverride column="FAUDIODOWNLOADSTATUS" property="audionDownLoadStatus" />
+
+            <columnOverride column="FCALLERAREA" property="callerArea" />
+            <columnOverride column="FCALLEDAREA" property="calledArea" />
+            <columnOverride column="FCALLEEAREANAME" property="calleeAreaName" />
+
+            <columnOverride column="FCREATETIME" property="createTime" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+            <columnOverride column="FKCUID" property="cuId" />
+
+
+        </table>-->
+
+        <table tableName="T_DIAL_OPERATORS_CITY" domainObjectName="OperatorsCity"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               selectByExampleQueryId="false">
+            <columnOverride column="FID" property="id" />
+            <columnOverride column="FCITY" property="city" />
+            <columnOverride column="FOPERATORS" property="operators" />
+            <columnOverride column="FUPDATETIME" property="updateTime" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+            <columnOverride column="FUPDATEPERSONID" property="updatePersonId" />
+        </table>
+    </context>
+</generatorConfiguration>
