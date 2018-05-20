@@ -12,4 +12,15 @@
 		<setting name="defaultExecutorType" value="SIMPLE" />
 		<setting name="defaultStatementTimeout" value="25000" />
 	</settings>
+	<plugins>
+		<plugin interceptor="com.yves.dao.plugin.PagePlugin">
+			<property name="dialectClass" value="com.yves.dao.plugin.dialect.OracleDialect"/>
+		</plugin>
+
+		<!--<plugin interceptor="com.yves.dao.plugin.PagePlugin">
+			<property name="dialect" value="oracle" />
+			<property name="pageSqlId" value=".*ByPage$" />
+		</plugin>-->
+
+	</plugins>
 </configuration>

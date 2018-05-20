@@ -99,5 +99,36 @@
 
     </select>
 
+    <select id="listVirtualBillByPage" parameterType="com.yves.model.common.Pagination" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List" /> from T_DIAL_VIRTUAL_BILL vb
+
+        <where>
+            <if test="id != null and id != ''">
+                AND vb.fid = #{id}
+            </if>
+
+            <if test="agentNumber != null and agentNumber != ''">
+                AND vb.FAGENTNUMBER = #{agentNumber}
+            </if>
+        </where>
+
+    </select>
+
+
+    <select id="getVirtualBillByMap" parameterType="map" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List" /> from T_DIAL_VIRTUAL_BILL vb
+
+        <where>
+            <if test="id != null and id != ''">
+                AND vb.fid = #{id}
+            </if>
+
+            <if test="agentNumber != null and agentNumber != ''">
+                AND vb.FAGENTNUMBER = #{agentNumber}
+            </if>
+        </where>
+
+    </select>
+
 </mapper>
 

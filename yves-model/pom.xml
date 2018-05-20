@@ -12,10 +12,11 @@
     <artifactId>yves-model</artifactId>
 
     <dependencies>
+
         <dependency>
-            <groupId>com.yves</groupId>
-            <artifactId>yves-common</artifactId>
-            <version>${yves.version}</version>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis</artifactId>
+            <version>3.4.5</version>
         </dependency>
     </dependencies>
 

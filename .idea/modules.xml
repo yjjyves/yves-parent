@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/yves-model/yves-model.iml" filepath="$PROJECT_DIR$/yves-model/yves-model.iml" />
       <module fileurl="file://$PROJECT_DIR$/yves-parent.iml" filepath="$PROJECT_DIR$/yves-parent.iml" />
       <module fileurl="file://$PROJECT_DIR$/yves-service/yves-service.iml" filepath="$PROJECT_DIR$/yves-service/yves-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/yves-util/yves-util.iml" filepath="$PROJECT_DIR$/yves-util/yves-util.iml" />
       <module fileurl="file://$PROJECT_DIR$/yves-web/yves-web.iml" filepath="$PROJECT_DIR$/yves-web/yves-web.iml" />
     </modules>
   </component>
